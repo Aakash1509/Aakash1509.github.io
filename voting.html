@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+        <script src ="voting.js"></script>
+        <style>
+            .pic{
+               
+
+/* Full height */
+height: 100%;
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+text-align:center;
+font-family: 'Tangerine', serif; 
+background-color: rgb(207, 229, 119);    
+            }
+            .header {
+            background-color: #8383b060;
+            padding: 20px;
+            text-align: center;
+           
+          }
+          p.outset {border-style: outset;}
+          div.s {
+             color: rgb(84, 22, 143);
+           font-family:"Sofia", sans-serif;
+           
+          }
+        </style>
+       
+          
+    </head>
+   
+   
+    <body class = "pic" background="2.png"  >
+        <div class="header">
+            <h1>VOTING FOR CLASS REPRESENTATIVE</h1>
+        </div>
+         <p class="outset"></p>
+        
+
+     <form>
+        <div class="s">
+        <label for="stream"><b><h3>SELECT YOUR DEPARTMENT:</h3></b></label> 
+        
+       
+
+       
+        <select id="st">
+            <option value="CSPIT-CSE">CSPIT-CSE</option>
+            <option value="CSPIT-CE">CSPIT-CE</option>
+            <option value="CSPIT-IT">CSPIT-IT</option>
+            <option value="CSPIT-EC">CSPIT-EC</option>
+            <option value="DEPSTAR-CSE">DEPSTAR-CSE</option>
+            <option value="DEPSTAR-CE">DEPSTAR-CE</option>
+            <option value="DEPSTAR-CE">DEPSTAR-CE</option>
+            <option value="DEPSTAR-IT">DEPSTAR-IT</option> 
+        </select>
+        <br><br>
+        <label for="division"><b><h3>SELECT YOUR DIVISION:</h3></b></label> 
+       
+        <select>
+            <option value="div-1">1</option>
+            <option value="div-2">2</option>
+
+            
+        </select>
+        <br><br>
+        <label for="id"><b><h3>ENTER YOUR ID:</h3></b></label> 
+        <input type="text" placeholder="eg. 21CS000">
+        <br><br>
+    </div>
+
+
+        <input type="Submit" onclick="run()">
+       
+        
+     </form>
+    </body>
+</html>
+
