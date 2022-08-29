@@ -143,6 +143,61 @@ Is there a less complex, easier, simpler way to do this? Probably.
 #sign-up-toggle:checked ~ #login-toggle:not(:checked) ~ #login-panel button p {
   top: -35px;
 }
+select {
+
+/* styling */
+background-color: white;
+border: thin solid blue;
+border-radius: 4px;
+display: inline-block;
+font: inherit;
+line-height: 1.5em;
+padding: 0.5em 3.5em 0.5em 1em;
+
+/* reset */
+
+margin: 0 0 5px 15px;      
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+-webkit-appearance: none;
+-moz-appearance: none;
+}
+
+select.round {
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    radial-gradient(#ddd 70%, transparent 72%);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - .5em) .5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1.5em 1.5em;
+  background-repeat: no-repeat;
+}
+
+select.round:focus {
+  background-image:
+    linear-gradient(45deg, white 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, white 50%),
+    radial-gradient(gray 70%, transparent 72%);
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    calc(100% - .5em) .5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1.5em 1.5em;
+  background-repeat: no-repeat;
+  border-color: green;
+  outline: 0;
+}
+
 
     </style>
 <div class="container">
@@ -155,10 +210,22 @@ Is there a less complex, easier, simpler way to do this? Probably.
         <input type="checkbox" id="login-toggle">
         <div id="login-panel">
           <form action="POST">
-            <input type="text" placeholder="First Name">
-            <input type="text" placeholder="Last Name">
+            <input type="text" placeholder="Name">
             <input type="email" placeholder="Email">
+            <input type="text" placeholder="ID">
             <input type="password" placeholder="Password">
+            
+            <select class="round">
+                <option>Department</option>
+                <option value="CSPIT-CSE">CSPIT-CSE</option>
+                <option value="CSPIT-CE">CSPIT-CE</option>
+                <option value="CSPIT-IT">CSPIT-IT</option>
+                <option value="CSPIT-EC">CSPIT-EC</option>
+                <option value="DEPSTAR-CSE">DEPSTAR-CSE</option>
+                <option value="DEPSTAR-CE">DEPSTAR-CE</option>
+                <option value="DEPSTAR-CE">DEPSTAR-CE</option>
+                <option value="DEPSTAR-IT">DEPSTAR-IT</option> 
+            </select>
           </form>
         
           <button><p>Sign Up</p><p>Login</p></button>
