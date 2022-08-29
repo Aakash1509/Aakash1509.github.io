@@ -1,63 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voting and Volunteering System</title>
-    <link rel="stylesheet" href="stylesheet.css">
-    <style>
-        .navbar {
-            background-color: yellow;
-            /* border-radius: 30px; */
-        }
-
-        .navbar ul {
-            overflow: auto;
-        }
-        .navbar li {
-            float: right;
-            list-style: none;
-            margin:20px 20px;
-        }
-        .navbar li a{
-            padding:3px 3px;
-            text-decoration: none;
-            color: black;
-        }
-        .navbar li a:hover{
-            color:blue;
-        }
-    </style>
+    <title>Log-in/Sign-up</title>
 </head>
-
 <body>
-    <header>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Event Information</a></li>
-                <li><a href="#">Home</a></li>
-            </ul>
-        </nav>
-    </header>
-    <img class="charusat" src="maxresdefault.jpg" alt="Charusat">
-    <div id="headerSection">
-        <p style="font-size: 200px">Voting and Volunteering System</p>
-        <hr>
-    </div>
-    <div id="bodySection">
-        <form action="#">
-            <h2>Login</h2>
-            <input type="text" name="Id" placeholder="Enter your college ID"><br><br>
-            <input type="password" name="password" placeholder="Enter password"><br><br>
-            <button
-                style="padding:5px;font-size: 15px;background-color: #3498db;color:white;border-radius: 5px;">Login</button><br><br>
-            New user? <a href="registration.html">Register here</a>
-        </form>
-    </div>
-</body>
+  
+        
+    <style>
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+button,
+label {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#login-register {
+  font-family: "Roboto";
+  font-size: 16px;
+  margin-top: 50px;
+}
+#login-panel {
+  position: absolute;
+  display: inline-block;
+  box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  z-index: 5;
+  background: white;
+  top: -40px;
+  transition: 0.5s;
+  min-height: 310px;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  padding: 15px 0;
+  border: 0;
+  border-bottom: solid 1px #dddddd;
+  font-family: inherit;
+  font-size: inherit;
+  display: block;
+  margin: 20px;
+  width: 250px;
+}
+#login-panel form {
+  position: relative;
+  transition: 0.5s;
+  top: 0;
+}
+#login-panel button {
+  margin: 0 auto;
+  display: block;
+  background: #2ecc40;
+  border-radius: 5px;
+  color: white;
+  width: 100%;
+  height: 45px;
+  margin-bottom: 5px;
+  transition: 0.5s;
+}
+#login-panel button:hover {
+  background: #01FF70;
+}
+#login-panel button p {
+  position: relative;
+  top: 0;
+  padding: 0;
+  margin: 0 0 15px 0;
+  transition: 0.5s;
+}
 
-</html>
+#box {
+  display: grid;
+  border: 1px solid #0074d9;
+  grid-template-columns: 1fr 1fr;
+  min-height: 450px;
+  width: 750px;
+  position: relative;
+}
+#box:first-child {
+  background: #242a6e;
+}
+label {
+  display: inline-block;
+  margin: 300px 0 10px 0;
+  cursor: pointer;
+  color: #0074d9;
+  border: 1px solid #0074d9;
+  padding: 10px 50px;
+  transition: 0.5s;
+  text-align: center;
+  height: 20px;
+  width: 100px;
+  justify-self: center;
+}
+label:hover {
+  color: white;
+  background-color: #0074d9;
+}
+input[type="checkbox"] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+/* Now for the nitty gritty
+  Special thanks to this dabblet for showing me the way
+  http://dabblet.com/gist/1506530
+Is there a less complex, easier, simpler way to do this? Probably.
+*/
+#sign-up-toggle:not(:checked) ~ #login-toggle:not(:checked) ~ #login-panel {
+  left: 7%;
+}
+#sign-up-toggle:not(:checked) ~ #login-toggle:checked ~ #login-panel {
+  left: 48%;
+}
+#sign-up-toggle:not(:checked) ~ #login-toggle:checked ~ #login-panel form {
+  top: -180px;
+}
+#sign-up-toggle:not(:checked) ~ #login-toggle:checked ~ #login-panel button p {
+  top: -35px;
+}
+#sign-up-toggle:checked ~ #login-toggle:checked ~ #login-panel {
+  left: 7%;
+}
+#sign-up-toggle:checked ~ #login-toggle:not(:checked) ~ #login-panel {
+  left: 48%;
+}
+#sign-up-toggle:checked ~ #login-toggle:not(:checked) ~ #login-panel form {
+  top: -180px;
+}
+#sign-up-toggle:checked ~ #login-toggle:not(:checked) ~ #login-panel button p {
+  top: -35px;
+}
+
+    </style>
+<div class="container">
+    <div id="login-register">
+  
+      <div id="box">
+        <label for="sign-up-toggle">Sign Up</label>
+        <input type="checkbox" id="sign-up-toggle">
+        <label for="login-toggle">Login</label>
+        <input type="checkbox" id="login-toggle">
+        <div id="login-panel">
+          <form action="POST">
+            <input type="text" placeholder="First Name">
+            <input type="text" placeholder="Last Name">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+          </form>
+        
+          <button><p>Sign Up</p><p>Login</p></button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
