@@ -1,0 +1,270 @@
+<?php
+
+$insert = false;
+if(isset($_POST['name'])){
+    // Set connection variables
+    $server = "localhost";
+    $username = "root";
+    $password = "";
+
+    // Create a database connection
+    $con = mysqli_connect($server, $username, $password);
+    if(!$con){echo "Success connecting to the db";}
+
+    // Check for connection success
+    if(!$con){
+        die("connection to this database failed due to" . mysqli_connect_error());
+    }
+    // echo "Success connecting to the db";
+
+    // Collect post variables
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $id = $_POST['id'];
+    $password = $_POST['pass'];
+    $department = $_POST['department'];
+    $sql = "INSERT INTO `voting_system`.`signup` (`name`, `email`, `id`, `password`, `department`) VALUES ('$name', '$email', '$id', '$password', '$department');";
+
+    if($con->query($sql) == true){
+        echo "Successfully inserted";}
+
+        $con->close();
+    }
+
+    ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log-in/Sign-up</title>
+</head>
+<body>
+  
+        
+    <style>
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+button,
+label {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#login-register {
+  font-family: "Roboto";
+  font-size: 16px;
+  margin-top: 50px;
+}
+#login-panel {
+  position: absolute;
+  display: inline-block;
+  box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  z-index: 5;
+  background: white;
+  top: -40px;
+  transition: 0.5s;
+  min-height: 310px;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  padding: 15px 0;
+  border: 0;
+  border-bottom: solid 1px #dddddd;
+  font-family: inherit;
+  font-size: inherit;
+  display: block;
+  margin: 20px;
+  width: 250px;
+}
+#login-panel form {
+  position: relative;
+  transition: 0.5s;
+  top: 0;
+}
+#login-panel button {
+  margin: 0 auto;
+  display: block;
+  background: #2ecc40;
+  border-radius: 5px;
+  color: white;
+  width: 100%;
+  height: 45px;
+  margin-bottom: 5px;
+  transition: 0.5s;
+}
+#login-panel button:hover {
+  background: #01FF70;
+}
+#login-panel button p {
+  position: relative;
+  top: 0;
+  padding: 0;
+  margin: 0 0 15px 0;
+  transition: 0.5s;
+}
+
+#box {
+  display: grid;
+  border: 1px solid #0074d9;
+  grid-template-columns: 1fr 1fr;
+  min-height: 450px;
+  width: 750px;
+  position: relative;
+}
+#box:first-child {
+  background: #242a6e;
+}
+label {
+  display: inline-block;
+  margin: 300px 0 10px 0;
+  cursor: pointer;
+  color: #0074d9;
+  border: 1px solid #0074d9;
+  padding: 10px 50px;
+  transition: 0.5s;
+  text-align: center;
+  height: 20px;
+  width: 100px;
+  justify-self: center;
+}
+label:hover {
+  color: white;
+  background-color: #0074d9;
+}
+input[type="checkbox"] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+/* Now for the nitty gritty
+  Special thanks to this dabblet for showing me the way
+  http://dabblet.com/gist/1506530
+Is there a less complex, easier, simpler way to do this? Probably.
+*/
+#sign-up-toggle:not(:checked) ~ #login-toggle:not(:checked) ~ #login-panel {
+  left: 7%;
+}
+#sign-up-toggle:not(:checked) ~ #login-toggle:checked ~ #login-panel {
+  left: 48%;
+}
+#sign-up-toggle:not(:checked) ~ #login-toggle:checked ~ #login-panel form {
+  top: -180px;
+}
+#sign-up-toggle:not(:checked) ~ #login-toggle:checked ~ #login-panel button p {
+  top: -35px;
+}
+#sign-up-toggle:checked ~ #login-toggle:checked ~ #login-panel {
+  left: 7%;
+}
+#sign-up-toggle:checked ~ #login-toggle:not(:checked) ~ #login-panel {
+  left: 48%;
+}
+#sign-up-toggle:checked ~ #login-toggle:not(:checked) ~ #login-panel form {
+  top: -180px;
+}
+#sign-up-toggle:checked ~ #login-toggle:not(:checked) ~ #login-panel button p {
+  top: -35px;
+}
+select {
+
+/* styling */
+background-color: white;
+border: thin solid blue;
+border-radius: 4px;
+display: inline-block;
+font: inherit;
+line-height: 1.5em;
+padding: 0.5em 3.5em 0.5em 1em;
+
+/* reset */
+
+margin: 0 0 5px 15px;      
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+-webkit-appearance: none;
+-moz-appearance: none;
+}
+
+select.round {
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    radial-gradient(#ddd 70%, transparent 72%);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - .5em) .5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1.5em 1.5em;
+  background-repeat: no-repeat;
+}
+
+select.round:focus {
+  background-image:
+    linear-gradient(45deg, white 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, white 50%),
+    radial-gradient(gray 70%, transparent 72%);
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    calc(100% - .5em) .5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1.5em 1.5em;
+  background-repeat: no-repeat;
+  border-color: green;
+  outline: 0;
+}
+
+
+    </style>
+<div class="container">
+    <div id="login-register">
+  
+      <div id="box">
+        <label for="sign-up-toggle">Sign Up</label>
+        <input type="checkbox" id="sign-up-toggle">
+        <label for="login-toggle">Login</label>
+        <input type="checkbox" id="login-toggle">
+        <div id="login-panel">
+          <form action="sign-up.php" method="post">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <input type="text" placeholder="ID">
+            <input type="password" placeholder="Password">
+            
+            <select class="round">
+                <option>Department</option>
+                <option value="CSPIT-CSE">CSPIT-CSE</option>
+                <option value="CSPIT-CE">CSPIT-CE</option>
+                <option value="CSPIT-IT">CSPIT-IT</option>
+                <option value="CSPIT-EC">CSPIT-EC</option>
+                <option value="DEPSTAR-CSE">DEPSTAR-CSE</option>
+                <option value="DEPSTAR-CE">DEPSTAR-CE</option>
+                <option value="DEPSTAR-CE">DEPSTAR-CE</option>
+                <option value="DEPSTAR-IT">DEPSTAR-IT</option> 
+            </select>
+          </form>
+        
+          <button><p>Sign Up</p><p>Login</p></button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
