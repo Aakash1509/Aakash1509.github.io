@@ -1,61 +1,110 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting and Volunteering System</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        .navbar {
+            background-color: yellow;
+            /* border-radius: 30px; */
+        }
+
+        .navbar ul {
+            overflow: auto;
+        }
+        .navbar li {
+            float: right;
+            list-style: none;
+            margin:20px 20px;
+        }
+        .navbar li a{
+            padding:3px 3px;
+            text-decoration: none;
+            color: black;
+        }
+        .navbar li a:hover{
+            color:white;
+        }
+    </style>
 </head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Event Information</a></li>
+                <li><a href="#">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <img class="charusat" src="maxresdefault.jpg" alt="Charusat">
+    <div id="headerSection">
+        <h1>Voting and Volunteering System</h1>
+        <hr>
+    </div>
+    <div id="bodySection">
+        <form action="#">
+            <h2>Login</h2>
+            <input type="text" name="Id" placeholder="Enter your college ID"><br><br>
+            <input type="password" name="password" placeholder="Enter password"><br><br>
+            <button
+                style="padding:5px;font-size: 15px;background-color: #3498db;color:white;border-radius: 5px;">Login</button><br><br>
+            New user? <a href="registration.html">Register here</a>
+        </form>
+    </div>
+</body>
+
+</html> -->
+<html>
+
+<head>
+    <title>Online voting system - Home</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#" >Food, LLC</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-    
-      <ul class="nav navbar-nav navbar-right" >
-        <li style>
-        <a href="#" > 
-        <span class="glyphicon glyphicon-cutlery"></span> chicken</a>
-        </li>
-        <li>
-        <a href="#" >
-        <span class="glyphicon glyphicon-info-sign"></span> beef</a>
-        </li>
-        <li>
-        <a href="#">
-        <span class="glyphicon glyphicon-certificate"></span> sushi</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<br>
-<br>  
-<h1><p class="text-center">Our Menu</p></h1>
+    <center>
+        <div id="headerSection">
+            <h1>Online Voting System</h1>
+        </div>
+        <hr>
 
+        <div id="loginSection">
+            <h2>Login</h2>
+            <form action="login.php" method="POST">
+                <!-- <input type="number" name="mob" placeholder="Enter mobile" required><br><br> -->
+                <input type="text" name="name" placeholder="Name"><br><br>
+                <input type="password" name="password" placeholder="Enter password" required><br><br>
+                <!-- <select name="role" style="width: 15%; border: 2px solid black">
+                        <option value="1">Voter</option>
+                        <option value="2">Group</option>
+                    </select><br><br>                   -->
+                <div class="from-group mb-3">
+                    <select name="department" class="form-control">
+                        <option>Department</option>
+                        <option value="CSPIT-CSE">CSPIT-CSE</option>
+                        <option value="CSPIT-CE">CSPIT-CE</option>
+                        <option value="CSPIT-IT">CSPIT-IT</option>
+                        <option value="CSPIT-EC">CSPIT-EC</option>
+                        <option value="DEPSTAR-CSE">DEPSTAR-CSE</option>
+                        <option value="DEPSTAR-CE">DEPSTAR-CE</option>
+                        <option value="DEPSTAR-CE">DEPSTAR-CE</option>
+                        <option value="DEPSTAR-IT">DEPSTAR-IT</option>
+                    </select>
+                </div><br><br>
+                <button id="loginbtn" type="submit" name="loginbtn">Login</button><br><br>
+                New user? <a href="registration.php">Register here</a>
+            </form>
+        </div>
 
-<div id="main-content" class="container">
-  <div id="home-tiles" class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-            
-            <p id="chickstory">
-          <h2>Chicken</h2>
-              He heard quiet steps behind him. That didn't bode well. Who could be following him this late at night and in this deadbeat part of town? And at this particular moment, just after he pulled off the big time and was making off with the greenbacks. Was there another crook who'd had the same idea, and was now watching him and waiting for a chance to grab the fruit of his labour? Or did the steps behind him mean that one of many law officers in town was on to him and just waiting to pounce and snap those cuffs on his wrists? He nervously looked all around. Suddenly he saw the alley. Like lightning he darted off to the left and disappeared between the two warehouses almost falling over the bin lying in the middle of the pavement. He tried to nervously tap his way along in the inky darkness and suddenly stiffened: it was a dead-end, he would have to go back the way he had come. The steps got louder and louder, he saw the black outline of a figure coming around the corner. Is this the end of the line? he thought pressing himself back against the wall trying to make himself invisible in the dark, was all that planning and energy wasted? He was dripping with sweat now, cold and wet, he could smell the fear coming off his clothes. Suddenly next to him, with a barely noticeable squeak, a door swung quietly to and fro in the night's breeze. Could this be the haven he'd prayed for? Slowly he slid toward the door, pressing himself more and more into the wall, into the dark, away from his enemy. Would this door save his hide?He heard quiet steps behind him. That didn't bode well. Who could be following him this late at night and in this deadbeat part of town? And at this particular moment, just after he pulled off the big time and was making off with the greenbacks. Was there another crook who'd had the same idea, and was now watching him and waiting for a chance to grab the fruit of his labour? Or did the steps behind him mean that one of many law officers in town was on to him and just waiting to pounce and snap those cuffs on his wrists? He nervously looked all around. Suddenly he saw the alley. Like lightning he darted off to the left and disappeared between the two warehouses almost falling over the bin lying in the middle of the pavement. He tried to nervously tap his way along in the inky darkness and suddenly stiffened: it was a dead-end, he would have to go back the way he had come. The steps got louder and louder, he saw the black outline of a figure coming around the corner. Is this the end of the line? he thought pressing himself back against the wall trying to make himself invisible in the dark, was all that planning and energy wasted? He was dripping with sweat now, cold and wet, he could smell the fear coming off his clothes. Suddenly next to him, with a barely noticeable squeak, a door swung quietly to and fro in the night's breeze. Could this be the haven he'd prayed for? Slowly he slid toward the door, pressing himself more and more into the wall, into the dark, away from his enemy. Would this door save his hide?He heard quiet steps behind him. That didn't bode well. Who could be following him this late at night and in this deadbeat part of town? And at this particular moment, just after he pulled off the big time and was making off with the greenbacks. Was there another crook who'd had the same idea, and was now watching him and waiting for a chance to grab the fruit of his labour? Or did the steps behind him mean that one of many law officers in town was on to him and just waiting to pounce and snap those cuffs on his wrists? He nervously looked all around. Suddenly he saw the alley. Like lightning he darted off to the left and disappeared between the two warehouses almost falling over the bin lying in the middle of the pavement. He tried to nervously tap his way along in the inky darkness and suddenly stiffened: it was a dead-end, he would have to go back the way he had come. The steps got louder and louder, he saw the black outline of a figure coming around the corner. Is this the end of the line? he thought pressing himself back against the wall trying to make himself invisible in the dark, was all that planning and energy wasted? He was dripping with sweat now, cold and wet, he could smell the fear coming off his clothes. Suddenly next to him, with a barely noticeable squeak, a door swung quietly to and fro in the night's breeze. Could this be the haven he'd prayed for? Slowly he slid toward the door, pressing himself more and more into the wall, into the dark, away from his enemy. Would this door save his hide?He heard quiet steps behind him. That didn't bode well. Who could be following him this late at night and in this deadbeat part of town? And at this particular moment, just after he pulled off the big time and was making off with the greenbacks. Was there another crook who'd had the same idea, and was now watching him and waiting for a chance to grab the fruit of his labour? Or did the steps behind him mean that one of many law officers in town was on to him and just waiting to pounce and snap those cuffs on his wrists? He nervously looked all around. Suddenly he saw the alley. Like lightning he darted off to the left and disappeared between the two warehouses almost falling over the bin lying in the middle of the pavement. He tried to nervously tap his way along in the inky darkness and suddenly stiffened: it was a dead-end, he would have to go back the way he had come. The steps got louder and louder, he saw the black outline of a figure coming around the corner. Is this the end of the line? he thought pressing himself back against the wall trying to make himself invisible in the dark, was all that planning and energy wasted? He was dripping with sweat now, cold and wet, he could smell the fear coming off his clothes. Suddenly next to him, with a barely noticeable squeak, a door swung quietly to and fro in the night's breeze. Could this be the haven he'd prayed for? Slowly he slid toward the door, pressing himself more and more into the wall, into the dark, away from his enemy. Would this door save his hide?
-            </p>
-      </div>
-    </div>
-</div>
-
+    </center>
 </body>
+
 </html>
